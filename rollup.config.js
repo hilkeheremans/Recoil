@@ -5,7 +5,7 @@ import replace from '@rollup/plugin-replace';
 import {terser} from 'rollup-plugin-terser';
 
 const inputFile = 'src/Recoil_index.js';
-const externalLibs = ['react', 'react-dom'];
+const externalLibs = ['react', 'react-dom', 'react-native'];
 
 const defaultNodeResolveConfig = {};
 const nodeResolvePlugin = nodeResolve(defaultNodeResolveConfig);
@@ -88,7 +88,7 @@ const configs = [
       format: 'es',
       exports: 'named',
     },
-    external: [...externalLibs, 'react-native'],
+    external: externalLibs,
     plugins: commonPlugins.map(plugin => {
       // Replace the default nodeResolve plugin
       if (plugin === nodeResolvePlugin) {

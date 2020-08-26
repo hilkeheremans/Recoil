@@ -11,9 +11,9 @@
  * This is a stub for some integration into FB internal stuff
  */
 
-const {unstable_batchedUpdates} = require('ReactDOM');
+const defaultBatcher = require('./Recoil_ReactBatchedUpdates');
 
-let batcher = unstable_batchedUpdates;
+let batcher = defaultBatcher;
 
 // flowlint-next-line unclear-type:off
 type Callback = () => any;
